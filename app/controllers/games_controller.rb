@@ -1,9 +1,8 @@
 class GamesController < ApplicationController
   # Add your GamesController code here
   def create
-    binding.pry
     @game = Game.create(params[:state])
-    render json: @game, status: 200
+    redirect_to root_path
   end
 
   def show
@@ -17,6 +16,6 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
-    render "home/index"
+    redirect_to root_path
   end
 end
