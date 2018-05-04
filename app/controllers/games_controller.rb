@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
   # Add your GamesController code here
   def create
-    @author = Author.find(params[:id])
+    binding.pry
+    @game = Game.create(params[:id])
     render json: @author, status: 200
   end
 
@@ -15,7 +16,7 @@ class GamesController < ApplicationController
   end
 
   def index
-    @game = Game.all
+    @games = Game.all
     render "home/index"
   end
 end
