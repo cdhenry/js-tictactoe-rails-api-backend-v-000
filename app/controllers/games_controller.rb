@@ -16,6 +16,6 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
-    redirect_to root_path
+    render "home/index"
   end
 end
