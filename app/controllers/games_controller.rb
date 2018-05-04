@@ -1,11 +1,13 @@
 class GamesController < ApplicationController
   # Add your GamesController code here
   def create
-    render "home/index"
+    @author = Author.find(params[:id])
+    render json: @author, status: 200
   end
 
   def show
-    render "home/index"
+    @game = Game.find(params[:id])
+    render json: @game, status: 200
   end
 
   def update
@@ -13,6 +15,7 @@ class GamesController < ApplicationController
   end
 
   def index
+    @game = Game.all
     render "home/index"
   end
 end
