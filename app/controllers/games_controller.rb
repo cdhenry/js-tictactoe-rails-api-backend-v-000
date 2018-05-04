@@ -3,7 +3,7 @@ class GamesController < ApplicationController
   def create
     binding.pry
     @game = Game.create()
-    render json: @author, status: 200
+    render json: @game, status: 200
   end
 
   def show
