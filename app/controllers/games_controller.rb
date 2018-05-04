@@ -27,7 +27,6 @@ class GamesController < ApplicationController
       @game = Game.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
       params.require(:game).permit(:state)
     end
