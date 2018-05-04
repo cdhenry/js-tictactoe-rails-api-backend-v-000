@@ -18,6 +18,6 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
-    render "home/index"
+    render json: @games, status: 200
   end
 end
