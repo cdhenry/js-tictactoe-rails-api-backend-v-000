@@ -20,4 +20,15 @@ class GamesController < ApplicationController
     @games = Game.all
     render json: @games, status: 200
   end
+
+  private 
+
+    def set_game
+      @game = Game.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def game_params
+      params.require(:game).permit(:state)
+    end
 end
