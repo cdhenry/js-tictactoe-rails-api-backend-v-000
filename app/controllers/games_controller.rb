@@ -1,8 +1,7 @@
 class GamesController < ApplicationController
   # Add your GamesController code here
   def create
-    binding.pry
-    @game = Game.create(params[:state])
+    @game = Game.create(state: params[:state])
     render json: @game, status: 201
   end
 
@@ -12,7 +11,7 @@ class GamesController < ApplicationController
   end
 
   def update
-    @game = Game.find(params[:id])
+    @game = Game.find(state: params[:id])
     @game.update(params[:state])
     render json: @game, status: 202
   end
