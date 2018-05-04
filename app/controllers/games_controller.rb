@@ -5,14 +5,14 @@ class GamesController < ApplicationController
   end
 
   def show
-    
+    render home
   end
 
   def update
-    
+    render home
   end
 
   def index
-    
+    render home
   end
 end
