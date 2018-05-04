@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   # Add your GamesController code here
   def create
     binding.pry
-    @game = Game.create()
+    @game = Game.create(params[:state])
     render json: @game, status: 200
   end
 
